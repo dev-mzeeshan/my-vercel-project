@@ -1328,102 +1328,232 @@
 
     /* ── RESPONSIVE ── */
     @media(max-width:960px) {
+
+      /* Hero wrapper adjustments */
       .hero-wrap {
         grid-template-columns: 1fr;
-        overflow-x: auto
+        padding: 0 24px;
+        gap: 2.5rem;
+        max-width: 100%;
       }
 
+      /* Center align hero content */
       .hero-wrap>div:first-child {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        max-width: 100%;
       }
 
       .hero-tag,
       .typing-wrap,
       .hero-soc {
         justify-content: center;
-        /* Flex items center mein */
       }
 
+      .hero-desc {
+        max-width: 100%;
+      }
+
+      /* Terminal optimization for tablets/small laptops */
       .terminal {
-
         display: block;
-        margin: 0 auto
+        margin: 0 auto;
+        max-width: 100%;
+        width: 100%;
       }
 
+      .term-body {
+        font-size: 12px;
+        padding: 18px;
+        overflow-x: auto;
+      }
+
+      /* Other sections */
       .about-grid {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
       }
 
       .contact-box {
-        padding: 44px 28px
+        padding: 44px 28px;
       }
 
+      /* Hide desktop nav, show hamburger */
       .nav-links,
       .nav-hire {
-        display: none
+        display: none;
       }
 
       .ham {
-        display: flex
+        display: flex;
       }
     }
 
     @media(max-width:540px) {
 
-      .hero-name {
-        font-size: 2.5rem;
-        line-height: 1.2;
+      /* Hero section mobile optimization */
+      #hero {
+        padding: 80px 0 40px;
+        min-height: auto;
       }
 
+      .hero-wrap {
+        padding: 0 18px;
+        gap: 2rem;
+      }
+
+      /* Hero name responsive sizing */
+      .hero-name {
+        font-size: clamp(32px, 9vw, 44px);
+        line-height: 1.15;
+        text-align: center;
+        word-break: break-word;
+      }
+
+      /* Typing effect mobile */
+      .typing-wrap {
+        font-size: 11px;
+        text-align: center;
+      }
+
+      /* Hero description mobile */
+      .hero-desc {
+        font-size: 14px;
+        line-height: 1.7;
+        text-align: center;
+      }
+
+      /* Buttons full width on mobile */
       .hero-btns {
         display: flex;
         flex-direction: column;
         width: 100%;
-        gap: 15px;
+        gap: 12px;
       }
 
       .btn-p,
       .btn-g {
         width: 100%;
-        /* Buttons mobile par full width lein */
+        justify-content: center;
+        padding: 13px 20px;
+        font-size: 12px;
+      }
+
+      /* Social links mobile layout */
+      .hero-soc {
+        flex-wrap: wrap;
+        gap: 12px;
         justify-content: center;
       }
 
-      .hero-soc {
-        flex-wrap: wrap;
-        /* Agar email address lamba ho toh agli line mein chala jaye */
-        gap: 15px;
+      .soc-div {
+        display: none;
+      }
+
+      .soc-lbl {
+        flex-basis: 100%;
+        text-align: center;
+        font-size: 10px;
+      }
+
+      /* Terminal CRITICAL mobile fixes */
+      .terminal {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .term-top {
+        padding: 10px 14px;
+      }
+
+      .t-tab {
+        font-size: 9px;
+      }
+
+      .td {
+        width: 8px;
+        height: 8px;
       }
 
       .term-body {
-        font-size: 13px;
-        /* Mobile par terminal font thoda chota */
-        padding: 15px;
+        font-size: 10px;
+        padding: 14px;
+        line-height: 1.8;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
       }
 
+      /* Terminal content spacing */
+      .tin {
+        padding-left: 10px;
+      }
+
+      .tbl {
+        margin-top: 6px;
+      }
+
+      /* Make terminal text wrap better */
+      .tl {
+        flex-wrap: wrap;
+      }
+
+      /* Other mobile adjustments */
       .wrap,
-      .hero-wrap {
-        padding: 0 18px
-      }
-
       .nav-inner {
-        padding: 14px 18px
+        padding-left: 18px;
+        padding-right: 18px;
       }
 
       .proj-grid {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
       }
 
       .clinks {
         flex-direction: column;
-        align-items: center
+        align-items: center;
       }
 
       section {
-        padding: 72px 0
+        padding: 72px 0;
+      }
+    }
+
+    /* Extra small devices (iPhone SE, old Androids) */
+    @media(max-width:375px) {
+      .hero-wrap {
+        padding: 0 16px;
+      }
+
+      .hero-name {
+        font-size: 30px;
+      }
+
+      .hero-desc {
+        font-size: 13px;
+      }
+
+      .hero-tag {
+        font-size: 9px;
+        padding: 5px 12px;
+      }
+
+      /* Terminal ultra-compact for small phones */
+      .term-body {
+        font-size: 9px;
+        padding: 12px;
+        line-height: 1.7;
+      }
+
+      .tin {
+        padding-left: 8px;
+      }
+
+      .btn-p,
+      .btn-g {
+        font-size: 11px;
+        padding: 12px 18px;
       }
     }
 
@@ -1431,7 +1561,7 @@
 
       .ham,
       .mob-menu {
-        display: none !important
+        display: none !important;
       }
     }
   </style>
